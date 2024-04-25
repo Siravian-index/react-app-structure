@@ -44,19 +44,6 @@ async function logoutFn() {
   window.location.assign(window.location.origin as unknown as string);
 }
 
-// const authConfig = {
-//   loadUser,
-//   loginFn,
-//   registerFn,
-//   logoutFn,
-//   LoaderComponent() {
-//     return (
-//       <div>
-//         Loading
-//       </div>
-//     );
-//   },
-// };
 
 export const { useUser, useLogin, useRegister, useLogout } = configureAuth({
   userFn: () => loadUser,
