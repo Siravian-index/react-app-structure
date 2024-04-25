@@ -19,10 +19,15 @@ export const axios = Axios.create({
 axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
   (response) => {
+    debugger
     return response.data;
   },
   (error) => {
-    const message = error.response?.data?.message || error.message;
+    // const message = error.response?.data?.message || error.message;
+    debugger
+    if (error.status === 401) {
+      // TODO: clear storages and move to login
+    }
     // useNotificationStore.getState().addNotification({
     //   type: 'error',
     //   title: 'Error',
