@@ -19,7 +19,6 @@ export const axios = Axios.create({
 axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
   (response) => {
-    debugger
     return response.data;
   },
   (error) => {

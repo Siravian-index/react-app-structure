@@ -13,7 +13,6 @@ import storage from '@/utils/storage';
 import { configureAuth } from 'node_modules/react-query-auth/dist';
 
 async function handleUserResponse(data: UserResponse) {
-  debugger
   const { accessToken: jwt, user } = data;
   storage.setToken(jwt);
   return user;

@@ -9,6 +9,7 @@ import { useLogout, useUser } from '@/lib/auth';
 // const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 
 
+
 const App = () => {
   const user = useUser()
 
@@ -50,4 +51,8 @@ export const protectedRoutes = [
       { path: '*', element: <Navigate to="." /> },
     ],
   },
+  {
+    path: "*",
+    element: <Navigate to="." />
+  }
 ];

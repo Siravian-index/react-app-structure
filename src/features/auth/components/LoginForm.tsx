@@ -1,5 +1,4 @@
 import { useLogin } from "@/lib/auth"
-import { useNavigate } from "react-router-dom"
 
 
 interface Props {

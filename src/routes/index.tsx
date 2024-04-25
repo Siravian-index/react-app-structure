@@ -4,17 +4,17 @@ import { useRoutes } from 'react-router-dom';
 
 import { publicRoutes } from './public';
 import { protectedRoutes } from './private';
+import { useUser } from '@/lib/auth';
 
 function AppRoutes() {
-  // const user = useUser();
+  const user = useUser();
 
 
   const commonRoutes = [
     { path: '/', element: <div>landing page</div> },
   ];
 
-  // const routes = user.data?.email ? protectedRoutes : publicRoutes;
-  const routes = [...publicRoutes, ...protectedRoutes]
+  const routes = user.data ? protectedRoutes : publicRoutes;
 
   const element = useRoutes([...routes, ...commonRoutes]);
 
