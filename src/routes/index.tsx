@@ -7,12 +7,12 @@ import { publicRoutes } from './public';
 
 function AppRoutes() {
   const user = useUser();
-  
+
 
   const commonRoutes = [{ path: '/', element: <div>landing page</div> }];
 
-  // const routes = auth.user ? protectedRoutes : publicRoutes;
-  const routes =  publicRoutes;
+  // const routes = user.data ? protectedRoutes : publicRoutes;
+  const routes = publicRoutes;
 
   const element = useRoutes([...routes, ...commonRoutes]);
 

@@ -5,12 +5,17 @@ interface Props {
 }
 
 function LoginForm({}: Props) {
+
+  function loginNow() {
+    debugger
+  }
   
   return (
-    <form>
+    <>
       <h3>LoginForm form</h3>
-      <input></input>
-    </form>
+      <input/>
+      <button onClick={loginNow}>Login</button>
+    </>
   )
 }
 
