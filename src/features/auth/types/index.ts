@@ -8,6 +8,6 @@ export type AuthUser = {
 };
 
 export type UserResponse = {
-  jwt: string;
+  accessToken: string;
   user: AuthUser;
 };
