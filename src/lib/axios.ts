@@ -1,11 +1,9 @@
-import Axios, { AxiosRequestConfig } from 'axios';
-import { queryClient } from './react-query';
+import Axios, { InternalAxiosRequestConfig } from 'axios';
 
-import { API_URL } from '@/config';
-import { useNotificationStore } from '@/stores/notifications';
 import storage from '@/utils/storage';
+import env from '@/config/env';
 
-function authRequestInterceptor(config: AxiosRequestConfig) {
+function authRequestInterceptor(config: InternalAxiosRequestConfig) {
   const token = storage.getToken();
   if (token) {
     config.headers.authorization = `${token}`;
@@ -15,7 +13,7 @@ function authRequestInterceptor(config: AxiosRequestConfig) {
 }
 
 export const axios = Axios.create({
-  baseURL: API_URL,
+  baseURL: env.VITE_BASE_API_URL,
 });
 
 axios.interceptors.request.use(authRequestInterceptor);
@@ -25,11 +23,11 @@ axios.interceptors.response.use(
   },
   (error) => {
     const message = error.response?.data?.message || error.message;
-    useNotificationStore.getState().addNotification({
-      type: 'error',
-      title: 'Error',
-      message,
-    });
+    // useNotificationStore.getState().addNotification({
+    //   type: 'error',
+    //   title: 'Error',
+    //   message,
+    // });
     return Promise.reject(error);
   }
 );
