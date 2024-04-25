@@ -1,6 +1,5 @@
 
 
-import { configureAuth } from 'node_modules/react-query-auth/dist';
 
 import {
   loginWithEmailAndPassword,
@@ -12,6 +11,7 @@ import {
 } from '@/features/auth';
 import storage from '@/utils/storage';
 import { axios } from '@/lib/axios';
+import { configureAuth } from 'node_modules/react-query-auth/dist';
 
 async function handleUserResponse(data: UserResponse) {
   const { jwt, user } = data;
@@ -45,7 +45,7 @@ async function logoutFn() {
 }
 
 
-export const { useUser, useLogin, useRegister, useLogout } = configureAuth({
+export const { useUser, useLogin, useRegister, useLogout, AuthLoader } = configureAuth({
   userFn: () => loadUser,
   loginFn: (data) => axios.post('/auth/login', data),
   registerFn: (data) => axios.post('/auth/register', data),

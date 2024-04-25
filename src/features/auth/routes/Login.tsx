@@ -1,7 +1,7 @@
 import LoginForm from "../components/LoginForm"
 
 
-function Login() {
+export function Login() {
 
   return (
     <>
@@ -11,4 +11,3 @@ function Login() {
 }
 
 
-export default Login
