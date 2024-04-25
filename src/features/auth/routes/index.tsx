@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, redirect, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { Login } from './Login';
 

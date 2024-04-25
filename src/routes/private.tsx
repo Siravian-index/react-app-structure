@@ -1,12 +1,12 @@
-import { Suspense, useEffect } from 'react';
-import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
 
 
 import { lazyImport } from '@/utils/lazyImport';
 import { useLogout, useUser } from '@/lib/auth';
 
 
-// const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
+const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 
 
 
@@ -19,7 +19,7 @@ const App = () => {
     console.log(user.data)
   }
 
-  
+
   return (
     <div>
       <h3>App layout</h3>
@@ -29,7 +29,7 @@ const App = () => {
       <Suspense
         fallback={
           <div>
-            loading
+            loading private route
           </div>
         }
       >
@@ -44,10 +44,7 @@ export const protectedRoutes = [
     path: '/app',
     element: <App />,
     children: [
-      // { path: '/discussions/*', element: <DiscussionsRoutes /> },
-      // { path: '/users', element: <Users /> },
-      // { path: '/profile', element: <Profile /> },
-      { path: 'dashboard', element: <div>Dashboard page</div> },
+      { path: 'dashboard', element: <Dashboard /> },
       { path: '*', element: <Navigate to="." /> },
     ],
   },

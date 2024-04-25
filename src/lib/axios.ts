@@ -24,7 +24,7 @@ axios.interceptors.response.use(
   (error) => {
     // const message = error.response?.data?.message || error.message;
     debugger
-    if (error.status === 401) {
+    if (error.data.status === 401) {
       // TODO: clear storages and move to login
     }
     // useNotificationStore.getState().addNotification({
