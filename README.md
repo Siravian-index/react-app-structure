@@ -2,15 +2,24 @@
 
 This template is based on [bulletproof-react](https://github.com/alan2207/bulletproof-react/tree/master) with updated dependencies and types
 
-bundler: vite
-package manager: yarn
+### Main tools
+
+Bundler: vite
+
+package-manager: yarn v1.22.22
+
 node-version: lts/iron v20.12.2
 
-notable libraries
+### Notable libraries
+
 fetcher: axios
+
 client state manager: zustand
+
 asynchronous state management: react-query
+
 auth: react-query-auth
+
 schema-validation: zod
 
 ``` bash
