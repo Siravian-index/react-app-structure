@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-This template provides is based on [bulletproof-react](https://github.com/alan2207/bulletproof-react/tree/master)
+This template is based on [bulletproof-react](https://github.com/alan2207/bulletproof-react/tree/master) with updated dependencies and types
 
 bundler: vite
 package manager: yarn
