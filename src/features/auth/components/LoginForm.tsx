@@ -1,4 +1,5 @@
 import { useLogin } from "@/lib/auth"
+import { getGoogleOAuthUrl } from "@/utils/getGoogleUrl"
 
 
 interface Props {
@@ -21,7 +22,13 @@ function LoginForm({ onSuccess }: Props) {
   return (
     <>
       <h3>LoginForm form</h3>
-      <button onClick={loginNow}>Login</button>
+      <div>
+        <button onClick={loginNow}>Login with email password</button>
+      </div>
+      <div>
+        <a href={getGoogleOAuthUrl()}>Login with google</a>
+      </div>
+
     </>
   )
 }
